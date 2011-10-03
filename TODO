@@ -1,0 +1,19 @@
+TODO Liste:
+
+Primär:
+Design überarbeiten (CSS und Images)
+Threads hinzufügen (Ein Topic hat mehrere Threads)
+Bei hinzufügen eines Topics, soll gleich der erste Thread geschrieben werden
+mithilfe von msg.properties Sprache überarbeiten um localization zu gewährleisten
+register.xhtml überarbeiten
+Userlist und Profil bearbeiten hinzufügen
+Wo sind vielleicht noch Servlets sinnvoll FacesServlet usw.
+
+Sekundär:
+Einheitlichen Kommentar in Klassen mit Uhrzeit und Autor
+install.xhtml überarbeiten
+
+
+
+
+
