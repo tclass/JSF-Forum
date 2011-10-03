@@ -10,10 +10,10 @@ import java.util.Date;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -54,6 +54,9 @@ public class Category extends GlobalTable implements Serializable {
     @OneToMany(targetEntity = Topic.class, mappedBy = "category")
     private Collection topics;
 
+	@OneToMany(targetEntity=Post.class,mappedBy="post",fetch=FetchType.EAGER)
+    private Collection posts;
+		
     public Category() {
     }
 
@@ -100,14 +103,15 @@ public class Category extends GlobalTable implements Serializable {
 	  this.topics = topics;
     }
 
-    public void addTopic(Topic topic) {
-        if (topic == null) {
-            getTopics().add(topic);
-        }
-
-    }
-
     public Collection getTopics() {
         return topics;
     }
+
+	public Collection getPosts() {
+		return posts;
+	}
+
+	public void setPosts(Collection posts) {
+		this.posts = posts;
+	}
 }

@@ -1,9 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package jsf.forum.controller;
-
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -11,12 +6,11 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import jsf.forum.entities.Category;
 import jsf.forum.entities.Forum;
-import jsf.forum.entities.Topic;
 import org.apache.log4j.Logger;
 
 /**
  *
- * @author Tobi
+ * @author royalclass
  */
 @Stateless
 public class CategoryController {

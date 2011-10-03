@@ -3,9 +3,6 @@
   <persistence-unit name="JSFForumPU" transaction-type="JTA">
     <provider>org.hibernate.ejb.HibernatePersistence</provider>
     <jta-data-source>Forum</jta-data-source>
-    <class>jsf.forum.entities.Category</class>
-    <class>jsf.forum.entities.Forum</class>
-    <class>jsf.forum.entities.User</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="hibernate.hbm2ddl.auto" value="update"/>
