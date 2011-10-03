@@ -1,0 +1,20 @@
+Einführung:
+Hi dies ist die README zum JSF-Forum. Es ist ein phpbb Clone in JSF, also auf 
+Basis von Java Enterprise. Dieses Projekt wurde ins Leben gerufen, da ich lange
+zeit mit dem JForum gearbeitet habe und auch selbst einige änderungen dran
+gemacht habe. Das JForum ist leider schon sehr alt und nicht mehr
+zeitgemäß. Es ist zeit für etwas neues.....lasst uns also starten 
+
+
+Installation und Einrichtung:
+
+Ihr braucht folgende Programme:
+
+- Netbeans (wird empfohlen) oder Eclipse (mit JEE Plugins)
+- Glassfish (zurzeit 3.0.1)
+- Mysql DB mit einer neuen Datenbank
+
+so nun könnt ihr fast schon starten. Es fehlt allerdings noch
+eine eigene persistence.xml mit den Daten zu eurer DB
+diese könnt ihr zumindest in Netbeans sehr einfach erstellen
+Herzlichen Glückwunsch ihr seit startbereit.
