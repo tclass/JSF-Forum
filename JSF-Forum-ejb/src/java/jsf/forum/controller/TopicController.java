@@ -34,7 +34,7 @@ public class TopicController {
      
     }
 
-    public Topic getTopicById(int id) {
+    public Topic getTopicById(Long id) {
         Topic topic = em.find(Topic.class, id);
         return topic;
     }

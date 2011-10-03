@@ -27,7 +27,7 @@ public class CategoryController {
         em.persist(category);
     }
 
-    public Category getCategoryById(int id) {
+    public Category getCategoryById(Long id) {
         Category category = em.find(Category.class, id);
         return category;
     }

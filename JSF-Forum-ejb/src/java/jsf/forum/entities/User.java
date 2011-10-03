@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package jsf.forum.entities;
 
 import java.io.Serializable;
@@ -19,11 +15,10 @@ import javax.persistence.TableGenerator;
 
 /**
  *
- * @author Tobi
+ * @author royalclass
  */
 //@NamedQuery
 @NamedQuery(name = "Userlogin", query = "SELECT u FROM User u WHERE u.password = :password and u.username = :username")
-//
 @Entity(name = "User")
 @Table(name = "User")
 @TableGenerator(name = "UserGenerator", table = "User", pkColumnName = "id")
@@ -32,7 +27,7 @@ public class User extends GlobalTable implements Serializable {
     @Id
     @SequenceGenerator(name = "User_SEQ", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "User_SEQ")
-    private int id;
+    private Long id;
 
     @Column(name = "username", nullable = false, columnDefinition = "varchar(30) COLLATE utf8_bin")
     private String username;
@@ -56,7 +51,7 @@ public class User extends GlobalTable implements Serializable {
     private String email;
 
     @OneToMany(targetEntity = Topic.class, mappedBy = "user")
-    private Collection threads;
+    private Collection topics;
 
     public User() {
     }
@@ -71,7 +66,11 @@ public class User extends GlobalTable implements Serializable {
         this.position = 0;
     }
 
-    public int getId() {
+	public void setId(Long id){
+		this.id = id;
+	}
+		
+    public Long getId() {
         return id;
     }
 
@@ -131,14 +130,14 @@ public class User extends GlobalTable implements Serializable {
         this.position = position;
     }
 
-    public void addThread(Topic thread) {
+    public void addTopic(Topic topic) {
         //wenn category noch nicht vorhanden und nicht null dann anlegen
-        if (!getThreads().contains(thread) || thread == null) {
-            getThreads().add(thread);
+        if (!getTopics().contains(topic) || topic == null) {
+            getTopics().add(topic);
         }
     }
 
-    public Collection getThreads() {
-        return threads;
+    public Collection getTopics() {
+        return topics;
     }
 }

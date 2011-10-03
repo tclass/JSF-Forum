@@ -1,8 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package jsf.forum.entities;
 
 import java.io.Serializable;
@@ -20,7 +15,7 @@ import javax.persistence.TableGenerator;
 
 /**
  *
- * @author Tobi
+ * @author royalclass
  */
 @Entity
 @Table(name = "Forum")
@@ -30,7 +25,7 @@ public class Forum extends GlobalTable implements Serializable {
     @Id
     @SequenceGenerator(name="Forum_SEQ", allocationSize=1)
     @GeneratedValue(strategy = GenerationType.AUTO, generator="Forum_SEQ")
-    private int id;
+    private Long id;
 
     @Column(name="name",nullable=false, length=50)
     private String name;
@@ -49,11 +44,11 @@ public class Forum extends GlobalTable implements Serializable {
         this.description = description;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -87,7 +82,7 @@ public class Forum extends GlobalTable implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (int) id;
+        hash += (Long) id;
         return hash;
     }
 

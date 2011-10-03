@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package jsf.forum.entities;
 
 import java.io.Serializable;
@@ -24,7 +20,7 @@ import javax.persistence.TableGenerator;
 
 /**
  *
- * @author Tobi
+ * @author royalclass
  */
 @NamedQueries({
         @NamedQuery(name="category.ByName", query="SELECT c from Category c where c.name = :name"),
@@ -40,7 +36,7 @@ public class Category extends GlobalTable implements Serializable {
     @Id
     @SequenceGenerator(name = "Category_SEQ", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "Category_SEQ")
-    private int id;
+    private Long id;
     
     @Column(name = "name", nullable = false, length = 50)
     private String name;
@@ -53,9 +49,6 @@ public class Category extends GlobalTable implements Serializable {
 
     @OneToMany(targetEntity = Topic.class, mappedBy = "category")
     private Collection topics;
-
-	@OneToMany(targetEntity=Post.class,mappedBy="post",fetch=FetchType.EAGER)
-    private Collection posts;
 		
     public Category() {
     }
@@ -67,11 +60,11 @@ public class Category extends GlobalTable implements Serializable {
         this.forum = forum;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -106,12 +99,4 @@ public class Category extends GlobalTable implements Serializable {
     public Collection getTopics() {
         return topics;
     }
-
-	public Collection getPosts() {
-		return posts;
-	}
-
-	public void setPosts(Collection posts) {
-		this.posts = posts;
-	}
 }

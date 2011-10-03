@@ -32,7 +32,7 @@ public class ForumController {
         em.persist(forum);
     }
 
-    public Forum getForumById(int id) {
+    public Forum getForumById(Long id) {
         Forum forum = em.find(Forum.class, id);
         return forum;
     }

@@ -48,13 +48,13 @@ public class TestCase {
         forumCtr.createForum("Aktuelles", "Aktuelle Themen aus dem Internet");
         forumCtr.createForum("Hobby", "Themen aus dem Bereich Hobby");
 
-        catCtr.createCategory("Plauderecke", "Die neusten Update, Patches, Leaks und vieles mehr", forumCtr.getForumById(1));
-        catCtr.createCategory("Musik", "welche neuen Alben sind rausgekommen usw.", forumCtr.getForumById(1));
-        catCtr.createCategory("Allgemeines", "Allgemeine Themen rund um alles was in der Welt abgeht", forumCtr.getForumById(1));
+        catCtr.createCategory("Plauderecke", "Die neusten Update, Patches, Leaks und vieles mehr", forumCtr.getForumById(new Long(1)));
+        catCtr.createCategory("Musik", "welche neuen Alben sind rausgekommen usw.", forumCtr.getForumById(new Long(1)));
+        catCtr.createCategory("Allgemeines", "Allgemeine Themen rund um alles was in der Welt abgeht", forumCtr.getForumById(new Long(1)));
 
-        catCtr.createCategory("Themenschau", "Alle allgemeinen Themen werden hier angesprochen, vieles Buntes usw.", forumCtr.getForumById(2));
-        catCtr.createCategory("Linux", "Alles rund um Linux und die Welt", forumCtr.getForumById(2));
-        catCtr.createCategory("Kochen", "Tausch die neusten Rezepte aus, auch Restaurantkritiken sind willkommen", forumCtr.getForumById(3));
+        catCtr.createCategory("Themenschau", "Alle allgemeinen Themen werden hier angesprochen, vieles Buntes usw.", forumCtr.getForumById(new Long(1)));
+        catCtr.createCategory("Linux", "Alles rund um Linux und die Welt", forumCtr.getForumById(new Long(2)));
+        catCtr.createCategory("Kochen", "Tausch die neusten Rezepte aus, auch Restaurantkritiken sind willkommen", forumCtr.getForumById(new Long(3)));
 
         }
         catch(Exception e){

@@ -30,14 +30,14 @@ public class TopicBean implements Serializable {
 	private transient CategoryController categoryCtr;
 	@EJB
 	private SessionController sessionCtr;
-	private int categoryId;
+	private Long categoryId;
 	private String topicName;
 
-	public void setCategoryId(int categoryId) {
+	public void setCategoryId(Long categoryId) {
 		this.categoryId = categoryId;
 	}
 
-	public int getCategoryId() {
+	public Long getCategoryId() {
 		return categoryId;
 	}
 

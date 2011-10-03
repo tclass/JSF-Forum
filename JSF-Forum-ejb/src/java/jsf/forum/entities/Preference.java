@@ -1,23 +1,14 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package jsf.forum.entities;
 
 import java.io.Serializable;
-import javax.naming.Context;
-import javax.naming.InitialContext;
 import javax.persistence.Entity;
-import javax.persistence.EntityManager;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.transaction.UserTransaction;
 
 /**
  *
- * @author Tobi
+ * @author royalclass
  */
 @Entity
 public class Preference implements Serializable {

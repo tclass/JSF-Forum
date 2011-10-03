@@ -24,14 +24,14 @@ public class CategoryBean {
 	Logger log = Logger.getLogger(CategoryBean.class);
 	@EJB
 	private transient CategoryController categoryCtr;
-	private int id;
+	private Long id;
 	private Category category;
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
