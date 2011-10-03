@@ -18,3 +18,10 @@ so nun könnt ihr fast schon starten. Es fehlt allerdings noch
 eine eigene persistence.xml mit den Daten zu eurer DB
 diese könnt ihr zumindest in Netbeans sehr einfach erstellen
 Herzlichen Glückwunsch ihr seit startbereit.
+
+nachdem ihr nun das Forum in eure IDE importiert habt und der Glassfish
+gestartet ist. Könnt ihr nun das Forum schonmal ein wenig mit Daten befüllen
+dies geschieht, in dem ihr z.b. 
+localhost:8080/JSF-Forum-war/faces/install/
+aufruft, dadurch werden ein paar Foren,Categories usw. angelegt.
+Nun seit ihr startbereit zur Entwicklung.
