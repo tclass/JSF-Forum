@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:tr="http://myfaces.apache.org/trinidad"
+    template="template.xhtml"
+    xmlns:c="http://java.sun.com/jsp/jstl/core"
+    xmlns:cc="http://java.sun.com/jsf/composite">
+
+<ui:define name="content">
+
+ <div id="baseTables">
+   <c:forEach id="Forumiteration" var="forum" items="#{IndexBean.forums}">
+    <table class="baseTable">
+        <thead>
+            <tr>
+	   <th class="forum">#{forum.name}</th>
+                <th class="topics">Topics</th>
+                <th class="posts">Posts</th>
+                <th class="last_post">Last Post</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        <c:forEach id="Categroyiteration" var="category" items="#{forum.categories}">
+            <tr>
+                <td class="forum">
+            <span style="font-weight:bold"><h:link outcome="category" value="#{category.name}"><f:param name="c" value="#{category.id}"/></h:link></span>
+                <br/><span style="font-size: 11px;color:black">#{category.description}</span></td>
+		  
+	  <td class="topics">#{category.topics.size()}</td>
+                <td class="posts">n.a.</td>
+                <td class="last_post">n.a.</td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+</c:forEach>
+ </div>
+</ui:define>
+</ui:composition>

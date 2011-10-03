@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene Scope="Project" version="2">
+    <Scope Scope="Faces Configuration Only"/>
+    <Scope Scope="Project">
+        <Node id="sidebarLeft.xhtml" x="887" y="-166" zoom="true"/>
+        <Node id="register.xhtml" x="10" y="56" zoom="false"/>
+        <Node id="index.xhtml" x="351" y="89" zoom="true"/>
+        <Node id="template.xhtml" x="400" y="300" zoom="true"/>
+        <Node id="category.xhtml" x="875" y="373" zoom="false"/>
+        <Node id="header.xhtml" x="29" y="216" zoom="true"/>
+        <Node id="*" x="285" y="-87" zoom="true"/>
+        <Node id="banner.xhtml" x="900" y="150" zoom="true"/>
+        <Node id="newTopic.xhtml" x="150" y="450" zoom="false"/>
+        <Node id="install.xhtml" x="400" y="450" zoom="true"/>
+    </Scope>
+    <Scope Scope="All Faces Configurations"/>
+</Scene>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:tr="http://myfaces.apache.org/trinidad"
+                template="template.xhtml">
+   
+
+    <body style="background-color: #CADCEB;">
+    <ui:define name="content">
+    <f:loadBundle basename="resources.language.msg" var="msg" />
+
+        <div class="content">
+
+            <span class="title">Register</span>
+            <hr/><br/>
+            
+            <h:form id="createUser">
+
+                <h:panelGrid cellspacing="10" columns="3">
+
+
+
+                        <h:outputText value="#{msg.firstname}" />
+                        <h:inputText id="firstname" autocomplete="true" value="#{RegisterBean.firstname}" size="20"/>
+                        <h:message errorClass="ERROR" for="firstname"/>
+
+                        <h:outputText value="#{msg.lastname}" />
+                        <h:inputText id="lastname" autocomplete="true" value="#{RegisterBean.lastname}" size="20"/>
+                        <h:message errorClass="ERROR" for="lastname"/>
+
+                        <h:outputText value="#{msg.username}" />
+                        <h:inputText id="username" autocomplete="true" value="#{RegisterBean.username}" required="true" size="20"/>
+                        <h:message errorClass="ERROR" for="username"/>
+
+
+                        <h:outputText value="#{msg.password}" />
+                        <h:inputSecret id="password" label="password" value="#{RegisterBean.password}" size="20" required="true"/>
+                        <h:message errorClass="ERROR" for="password"/>
+
+                        <h:outputText value="#{msg.password_confirmation}" />
+                        <h:inputSecret id="password2" value="#{RegisterBean.password2}" requiredMessage="#{msg.password_confirmation_required}" required="true"/>
+                        <h:message errorClass="ERROR" for="password2"/>
+
+                        <h:outputText value="#{msg.email}" />
+                        <h:inputText id="email" autocomplete="true" value="#{RegisterBean.email}" label="email" size="20" required="true"/>
+                        <h:message errorClass="ERROR" for="email"/>
+
+                        <h:commandButton value="Register" action="#{RegisterBean.register}" />
+
+                    </h:panelGrid>
+                
+            </h:form>
+        </div>
+    </ui:define>
+</body>
+</ui:composition>

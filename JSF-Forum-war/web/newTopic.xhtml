@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:tr="http://myfaces.apache.org/trinidad"
+                template="template.xhtml">
+
+
+ <body style="background-color: #CADCEB;">
+ <ui:define name="content">
+	<f:metadata>
+	 <f:viewParam name="c" value="#{TopicBean.categoryId}"/>
+	</f:metadata>
+
+	<f:loadBundle basename="resources.language.msg" var="msg" />
+
+	<div class="content">
+
+	 <span class="title">New Topic</span>
+	 <hr/><br/>
+
+	 <h:form id="newTopic">
+
+		<h:panelGrid cellspacing="10" columns="3">
+
+
+		 <h:form id="newTopic"> 
+			<h:outputText value="Themenname" />
+			<h:inputText id="TopicName" autocomplete="true" value="#{TopicBean.topicName}" size="20"/>
+			<h:message errorClass="ERROR" for="TopicName"/>
+
+
+			<h:commandButton action="#{TopicBean.newTopic}" value="Neues Topic" />
+		 </h:form>
+
+		</h:panelGrid>
+
+	 </h:form>
+	</div>
+ </ui:define>
+</body>
+</ui:composition>
