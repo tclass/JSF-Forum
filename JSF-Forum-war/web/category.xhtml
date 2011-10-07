@@ -11,26 +11,17 @@
 <f:metadata>
     <f:viewParam name="c" value="#{CategoryBean.id}"/>
 </f:metadata>
-    <table class="baseTable">
-        <thead>
-            <tr>
-			<th class="forum">#{CategoryBean.category.name}</th>
-                <th class="topics">Topics</th>
-                <th class="posts">Posts</th>
-                <th class="last_post">Last Post</th>
-            </tr>
-        </thead>
-        <tbody>
-        <c:forEach id="Topiciteration" var="topic" items="#{CategoryBean.topics}">
-            <tr>
-                <td class="forum"><span style="font-weight: bold">#{topic.name}</span><br/><span style="font-size: 11px;color:black">#{topic.name}</span></td>
-                <td class="topics">15</td>
-                <td class="posts">20</td>
-                <td class="last_post">#{topic.getUser().getUsername()}</td>
-            </tr>
-        </c:forEach>
-        </tbody>
-    </table>
+
+		<h:dataTable columnClasses="forum,topics,posts,last_post" styleClass="baseTable" id="indexTable" var="topic" value="#{CategoryBean.topics}">
+		 <h:column rowHeader="forum" headerClass="forum"><f:facet name="header"><h:outputText value="#{CategoryBean.category.name}"/></f:facet>
+			<span style="font-weight: bold">#{topic.name}</span>
+			<br/><span style="font-size: 11px;color:black">#{topic.name}</span>
+		 </h:column>
+		 <h:column headerClass="topics"><f:facet name="header"><h:outputText value="Topics" /></f:facet><h:outputText value="n.a." /></h:column>
+		 <h:column headerClass="posts"><f:facet name="header"><h:outputText value="Posts" /></f:facet><h:outputText value="n.a." /></h:column>
+		 <h:column headerClass="last_post"><f:facet name="header"><h:outputText value="LastPost" /></f:facet><h:outputText value="#{topic.getUser().getUsername()}" /></h:column>
+		</h:dataTable>
+ 
             <h:link outcome="newTopic" value="Neues Topic"><f:param name="c" value="#{CategoryBean.id}"/></h:link>
 </ui:define>
 </ui:composition>
