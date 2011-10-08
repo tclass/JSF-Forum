@@ -23,15 +23,15 @@ public class TopicController {
     private EntityManager em;
     Logger log = Logger.getLogger(TopicController.class);
 
-    public void newTopic(String name, String description, int type,Category category, User user) throws Exception {
+    /*
+	* returns the Topic that was persist 
+     */
+    public Topic newTopic(String name, String description, int type,Category category, User user) throws Exception {
         log.debug("Create new Topic: " + name + " in "+ category.getName());
 
-		
         Topic topic = new Topic(name,description, type, category,user);
-
         em.persist(topic);
-        
-     
+	   return topic;
     }
 
     public Topic getTopicById(Long id) {
