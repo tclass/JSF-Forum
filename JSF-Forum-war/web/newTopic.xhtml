@@ -7,37 +7,34 @@
                 template="template.xhtml">
 
 
- <body style="background-color: #CADCEB;">
- <ui:define name="content">
-	<f:metadata>
-	 <f:viewParam name="c" value="#{TopicBean.categoryId}"/>
-	</f:metadata>
+	<body style="background-color: #CADCEB;">
+	<ui:define name="content">
+		<f:metadata>
+			<f:viewParam name="c" value="#{TopicBean.categoryId}"/>
+		</f:metadata>
 
-	<f:loadBundle basename="resources.language.msg" var="msg" />
+		<f:loadBundle basename="resources.language.msg" var="msg" />
 
-	<div class="content">
+		<div class="content">
 
-	 <span class="title">New Topic</span>
-	 <hr/><br/>
+			<span class="title">New Topic</span>
+			<hr/><br/>
 
-	 <h:form id="newTopic">
+				<h:form id="newTopic">
 
-		<h:panelGrid cellspacing="10" columns="3">
+					<h:panelGrid cellspacing="10" columns="3">
+						<h:outputText value="Themenname" />
+						<h:inputText id="TopicName" autocomplete="true" required="true" requiredMessage="Bitte trage den Themennamen ein" value="#{TopicBean.topicName}" size="20"/>
+						<h:message errorClass="ERROR" for="TopicName"/> 
+					</h:panelGrid>
 
+					<h:inputTextarea id="PostText" style="width: 800px;height: 300px;" required="true" requiredMessage="Bitte trage einen Text für deinen Post ein" value="#{TopicBean.postText}" />
+					<h:message errorClass="ERROR" for="PostText"/>
+					<br /><br />
+					<h:commandButton action="#{TopicBean.newTopic}" value="Neues Topic" />
 
-		 <h:form id="newTopic"> 
-			<h:outputText value="Themenname" />
-			<h:inputText id="TopicName" autocomplete="true" value="#{TopicBean.topicName}" size="20"/>
-			<h:message errorClass="ERROR" for="TopicName"/>
-
-
-			<h:commandButton action="#{TopicBean.newTopic}" value="Neues Topic" />
-		 </h:form>
-
-		</h:panelGrid>
-
-	 </h:form>
-	</div>
- </ui:define>
+				</h:form>
+		</div>
+	</ui:define>
 </body>
 </ui:composition>

@@ -9,9 +9,11 @@ import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import jsf.forum.controller.CategoryController;
+import jsf.forum.controller.PostController;
 import jsf.forum.controller.SessionController;
 import jsf.forum.controller.TopicController;
 import jsf.forum.entities.Category;
+import jsf.forum.entities.Topic;
 import jsf.forum.entities.User;
 import org.apache.log4j.Logger;
 
@@ -30,8 +32,12 @@ public class TopicBean implements Serializable {
 	private transient CategoryController categoryCtr;
 	@EJB
 	private SessionController sessionCtr;
+	@EJB
+	private PostController postCtr;
+	
 	private Long categoryId;
 	private String topicName;
+	private String postText;
 
 	public void setCategoryId(Long categoryId) {
 		this.categoryId = categoryId;
@@ -49,12 +55,22 @@ public class TopicBean implements Serializable {
 		return topicName;
 	}
 
+	public String getPostText() {
+		return postText;
+	}
+
+	public void setPostText(String postText) {
+		this.postText = postText;
+	}
+
 	public String newTopic() {
 		Category category = categoryCtr.getCategoryById(categoryId);
 		User user = sessionCtr.getUser();
         try {
 
-			topicCtr.newTopic(topicName, "Nichts eigentlich", 0, category, user);
+			Topic topic = topicCtr.newTopic(topicName, "Nichts eigentlich", 0, category, user);
+			postCtr.createPost(user, postText, topic);
+			
 		} catch (Exception e) {
 			log.error(e);
 		}
