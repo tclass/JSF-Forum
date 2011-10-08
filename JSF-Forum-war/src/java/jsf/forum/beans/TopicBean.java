@@ -68,7 +68,7 @@ public class TopicBean implements Serializable {
 		User user = sessionCtr.getUser();
         try {
 
-			Topic topic = topicCtr.newTopic(topicName, "Nichts eigentlich", 0, category, user);
+			Topic topic = topicCtr.newTopic(topicName, 0, category, user);
 			postCtr.createPost(user, postText, topic);
 			
 		} catch (Exception e) {

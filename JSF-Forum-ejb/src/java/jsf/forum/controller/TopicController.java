@@ -26,10 +26,10 @@ public class TopicController {
     /*
 	* returns the Topic that was persist 
      */
-    public Topic newTopic(String name, String description, int type,Category category, User user) throws Exception {
+    public Topic newTopic(String name, int type,Category category, User user) throws Exception {
         log.debug("Create new Topic: " + name + " in "+ category.getName());
 
-        Topic topic = new Topic(name,description, type, category,user);
+        Topic topic = new Topic(name, type, category,user);
         em.persist(topic);
 	   return topic;
     }

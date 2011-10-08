@@ -31,9 +31,6 @@ public class Topic extends GlobalTable implements Serializable {
 
     @Column(name="name",nullable=false, length=50)
     private String name;
-
-    @Column(name="description",nullable=false,columnDefinition="TEXT")
-    private String description;
     
     @Column(name="type",nullable=false)
     private int type;
@@ -50,9 +47,8 @@ public class Topic extends GlobalTable implements Serializable {
     public Topic() {
     }
 
-    public Topic(String name,String description, int type,Category category, User user) {
+    public Topic(String name, int type,Category category, User user) {
         this.name = name;
-        this.description = description;
         this.type = type;
         this.category = category;
 	  this.user = user;
@@ -72,14 +68,6 @@ public class Topic extends GlobalTable implements Serializable {
 
     public void setCategory(Category category) {
         this.category = category;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public String getName() {
