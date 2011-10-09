@@ -11,7 +11,6 @@ import javax.enterprise.context.RequestScoped;
 import jsf.forum.controller.CategoryController;
 import jsf.forum.controller.ForumController;
 import jsf.forum.controller.UserController;
-import org.apache.log4j.Logger;
 
 /**
  *
@@ -39,7 +38,7 @@ public class TestCase {
     public void createDefault(){
 
         try{
-        userCtr.createUser("Tobi", "test", "Tobias", "Klasse", 12, "t.klasse@googlemail.com");
+        userCtr.createUser("manny", "test", "Manfred", "Tester", 25, "manny@jsfforum.de");
         userCtr.createUser("jsf", "test", "Mia", "Klein", 19, "mia.klein@googlemail.com");
         userCtr.createUser("jsftest", "test", "cat", "Mehr", 20, "susi@googlemail.com");
 
